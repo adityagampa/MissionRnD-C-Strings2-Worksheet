@@ -10,7 +10,21 @@ Note:Dont modify original string Neglect Spaces at the right end and at left end
 */
 #include <stdlib.h>
 
-char * get_last_word(char * str){
-
-	return NULL;
+char * get_last_word(char * str)
+{
+	if (str == NULL)
+		return NULL;
+	char *last = (char *)malloc(100);
+	int i = 0, p = 0;
+	for (; str[i] != '\0'; i++)
+	{
+		if (str[i - 1] == ' ' && str[i] != ' ')
+			p = 0;
+		if (str[i] != ' ')
+		{
+			last[p++] = str[i];
+		}
+	}
+	last[p] = '\0';
+	return last;
 }
