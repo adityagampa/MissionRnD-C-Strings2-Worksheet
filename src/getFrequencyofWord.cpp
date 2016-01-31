@@ -34,9 +34,21 @@ int count_word_in_str_way_1(char *str, char *word)
 			p = 0;
 		}
 	}
+	int flag = 0;
+	i = 1;
+	while (word[i] != '\0')
+	{
+		if (word[i] != word[i - 1])
+		{
+			flag = 1;
+			break;
+		}
+		i++;
+	}
+	if (!flag)
+		return count*i;
 	return count;
 }
-
 int count_word_int_str_way_2_recursion(char *str, char *word){
 	return 0;
 }
